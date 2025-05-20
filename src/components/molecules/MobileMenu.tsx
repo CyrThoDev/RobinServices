@@ -12,7 +12,7 @@ function MobileMenu({ isNavOpen, toggleNav }: MobileMenuPropsType) {
 		<div
 			className={`${
 				isNavOpen
-					? "fixed inset-0 w-full h-screen z-50 flex flex-col justify-center gap-10 items-center bg-white"
+					? "fixed inset-0 w-full h-screen z-20 flex flex-col justify-center gap-10 items-center bg-white"
 					: "hidden"
 			}`}
 		>

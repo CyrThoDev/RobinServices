@@ -16,7 +16,11 @@ function Hero() {
 						<p className="text-lg md:text-xl">Besoin d&#39;un service?</p>
 					</div>
 
-					<Button title="RESERVER UN SERVICE" width="w-3rem" link="/contact" />
+					<Button
+						title="RESERVER UN SERVICE"
+						width="max-w-fit"
+						link="/contact"
+					/>
 				</div>
 
 				<div className="">
