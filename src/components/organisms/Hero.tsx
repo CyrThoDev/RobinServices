@@ -1,7 +1,5 @@
-import maison from "@/../public/maison.jpg";
-import fondHero from "@/../public/FondHero.png";
 import Image from "next/image";
-import NavBar from "./NavBar";
+
 function Hero() {
 	return (
 		<>
