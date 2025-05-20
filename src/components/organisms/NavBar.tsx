@@ -28,8 +28,8 @@ function NavBar() {
 			{/* Mobile menu */}
 			<div
 				className={`${
-					isSticky ? "sticky top-0 bg-white shadow-md" : ""
-				}  flex items-center justify-between  min-[1150px]:hidden z-20 transition-all duration-300 `}
+					isSticky ? "sticky top-0 py-4 px-10 bg-primary shadow-md" : ""
+				}  py-4 px-10 flex items-center justify-between  min-[1150px]:hidden z-20 transition-all duration-300 `}
 			>
 				<Logo />
 				<button
@@ -38,9 +38,9 @@ function NavBar() {
 					onClick={toggleNav}
 					aria-label="Ouvrir le menu mobile"
 				>
-					<span className="block h-0.5 w-8 bg-black" />
-					<span className="block h-0.5 w-8 bg-black" />
-					<span className="block h-0.5 w-8 bg-black" />
+					<span className="block h-0.5 w-8 bg-white" />
+					<span className="block h-0.5 w-8 bg-white" />
+					<span className="block h-0.5 w-8 bg-white" />
 				</button>
 
 				<MobileMenu isNavOpen={isNavOpen} toggleNav={toggleNav} />
@@ -50,9 +50,9 @@ function NavBar() {
 			<div
 				className={`hidden ${
 					isSticky ? "sticky top-0 bg-white shadow-md" : ""
-				} min-[1150px]:flex justify-between  px-10 xl:px-20 py-2 z-20`}
+				} min-[1150px]:flex justify-between  px-10 xl:px-20 py-4 z-20`}
 			>
-				<Link href="">
+				<Link href="/">
 					<Image
 						src="/Logosample.png"
 						alt="Logo"
@@ -63,11 +63,15 @@ function NavBar() {
 				</Link>
 
 				<Menu />
-				<div className="flex flex-row items-center gap-4">
+				<div className="flex flex-row items-center gap-12">
 					<Link href="" className="">
 						0606060606
 					</Link>
-					<Button title="RESERVER UN SERVICE" width="w-3rem" link="/contact" />
+					<Button
+						title="RESERVER UN SERVICE"
+						width="max-w-fit"
+						link="/contact"
+					/>
 				</div>
 			</div>
 		</>
