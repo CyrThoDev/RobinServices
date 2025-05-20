@@ -10,10 +10,10 @@ export default function Home() {
 					src="/FondHero.png" // <- image d’arrière-plan
 					alt="Image de fond"
 					width={1920}
-					height={800}
-					className="w-full h-auto"
+					height={400}
+					className="w-full h-full"
 				/>
-				<div className=" absolute top-0 left-0 w-full h-full flex flex-col  justify-between ">
+				<div className="absolute top-0 left-0 w-full h-full flex flex-col   ">
 					<NavBar />
 					<Hero />
 				</div>

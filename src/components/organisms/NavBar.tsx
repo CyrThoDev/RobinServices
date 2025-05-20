@@ -63,7 +63,7 @@ function NavBar() {
 				</Link>
 
 				<Menu />
-				<div className="flex flex-row items-center gap-4">
+				<div className="flex flex-row items-center gap-12">
 					<Link href="" className="">
 						0606060606
 					</Link>
