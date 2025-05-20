@@ -7,7 +7,7 @@ function Footer() {
 			<div className="flex flex-col">
 				<div className="grid grid-cols-3 justify-items-between  gap-4">
 					<div className="flex flex-col items-start gap-2 ">
-						<h2>Zone d'intervention</h2>
+						<h2>Zone d&#39;intervention</h2>
 						<h3>Communauté de communes de Mimizan</h3>
 					</div>
 					<div className="flex flex-col items-center gap-8">

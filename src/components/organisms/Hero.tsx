@@ -13,7 +13,7 @@ function Hero() {
 						<p className="text-lg md:text-xl">
 							Votre artisan au quotidien à Mimizan
 						</p>
-						<p className="text-lg md:text-xl">Besoin d'un service?</p>
+						<p className="text-lg md:text-xl">Besoin d&#39;un service?</p>
 					</div>
 
 					<Button title="RESERVER UN SERVICE" width="w-3rem" link="/contact" />
