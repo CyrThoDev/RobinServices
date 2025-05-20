@@ -10,17 +10,29 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+  --color-secondary : #FFB903}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+/* styles/background.css */
+.backgroundImage {
+  background-image: url('../../public/FondHero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height:100%;
+  position:relative;
+  z-index:0}
+
+/* Adjustments for tablets */
+@media (max-width: 768px) {
+  .backgroundImage {
+    background-position: top;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Adjustments for mobile phones */
+@media (max-width: 480px) {
+  .backgroundImage {
+    background-image: url('../../public/FondHero.png');
+  }
 }
