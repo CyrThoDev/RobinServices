@@ -64,8 +64,8 @@ function NavBar() {
 
 				<Menu />
 				<div className="flex flex-row items-center gap-12">
-					<Link href="" className="">
-						0606060606
+					<Link href="" className="font-medium">
+						06 06 06 06 06
 					</Link>
 					<Button
 						title="RESERVER UN SERVICE"
