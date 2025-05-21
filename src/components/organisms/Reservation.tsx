@@ -38,7 +38,7 @@ export default function Reservation() {
 				<div className="md:block relative">
 					<div className="flex justify-center  items-center mb-8">
 						<div className="relative w-full lg:max-w-6xl flex flex-col gap-4 lg:flex-row justify-between items-center z-10">
-							{steps.map((step, index) => (
+							{steps.map((step) => (
 								<div key={step.id}>
 									<IconStep {...step} />
 								</div>
