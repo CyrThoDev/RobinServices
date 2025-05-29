@@ -1,6 +1,6 @@
 import React from "react";
 import InterventionCities from "../molecules/InterventionCities";
-import CarteZone from "../molecules/CarteZone";
+import CarteZoneWrapper from "../molecules/CarteZoneWrapper";
 
 function InterventionZone() {
 	return (
@@ -10,7 +10,7 @@ function InterventionZone() {
 					<InterventionCities />
 				</div>
 				<div className="w-full lg:w-1/2">
-					<CarteZone />
+					<CarteZoneWrapper />
 				</div>
 			</div>
 		</section>
