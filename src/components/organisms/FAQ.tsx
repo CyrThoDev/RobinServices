@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import Button from "../atoms/Button";
 
 const faqs = [
@@ -43,9 +43,9 @@ const faqs = [
 ];
 
 function FAQ() {
-	const [openIndex, setOpenIndex] = useState(null);
+	const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-	const toggleFAQ = (index) => {
+	const toggleFAQ = (index: number) => {
 		setOpenIndex(openIndex === index ? null : index);
 	};
 
@@ -58,9 +58,12 @@ function FAQ() {
 			<div className="space-y-6">
 				{faqs.map((faq, index) => (
 					<div key={index} className="border-b border-white pb-4">
-						<h3
-							className="text-black font-semibold mb-2 cursor-pointer flex items-center justify-between"
+						<button
+							type="button"
+							className="w-full text-left text-black font-semibold mb-2 cursor-pointer flex items-center justify-between focus:outline-none"
 							onClick={() => toggleFAQ(index)}
+							aria-expanded={openIndex === index}
+							aria-controls={`faq-answer-${index}`}
 						>
 							{faq.question}
 							<span
@@ -70,14 +73,14 @@ function FAQ() {
 							>
 								▼
 							</span>
-						</h3>
+						</button>
 						{openIndex === index && (
-							<p className="text-black mt-2">{faq.answer}</p>
+							<p id={`faq-answer-${index}`} className="text-black mt-2">
+								{faq.answer}
+							</p>
 						)}
 					</div>
 				))}
-			</div>
-			<div className="flex flex-col gap-8 items-center justify-center text-black">
 				<p className="text-center">
 					Tu n’as pas trouvé réponse à ta question ?
 				</p>

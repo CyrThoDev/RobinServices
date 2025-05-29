@@ -30,7 +30,7 @@ export default function InterventionCities() {
 	return (
 		<section className="pt-12 pl-20">
 			<h2 className="text-3xl font-bold  text-center pb-8">
-				Zone d'intervention
+				Zone d&#39;intervention
 			</h2>
 			<p className="text-lg pb-8">
 				Robin Aménagements Services intervient dans les communes suivantes :

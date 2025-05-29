@@ -1,9 +1,7 @@
 import Hero from "@/components/organisms/Hero";
 import NavBar from "@/components/organisms/NavBar";
 import Reservation from "@/components/organisms/Reservation";
-import ZoneIntervention from "@/components/molecules/InterventionCities";
 import Image from "next/image";
-import CarteZone from "@/components/molecules/CarteZone";
 import InterventionZone from "@/components/organisms/InterventionZone";
 export default function Home() {
 	return (

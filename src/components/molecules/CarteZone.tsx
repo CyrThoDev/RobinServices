@@ -2,7 +2,7 @@
 
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import type { LatLngTuple, GeoJSON as GeoJSONType } from "leaflet";
+import type { LatLngTuple } from "leaflet";
 import { useEffect, useState } from "react";
 
 export default function CarteZone() {
