@@ -4,41 +4,42 @@ import Button from "../atoms/Button";
 
 const faqs = [
 	{
-		question:
-			"Qu’est-ce qui différencie HENKO COACHING d’une salle de sport classique ?",
+		question: "Quels types de services propose Robin Aménagement ?",
 		answer:
-			"Le concept HENKO COACHING est différent car c’est une petite salle intimiste qui prône pour la qualité plutôt que la quantité, grâce à une coach sportive présente et disponible pour vous du début à la fin de votre séance. De plus, plusieurs formules vous sont proposées pour que vous ne soyez pas bloqués à payer un abonnement pendant 12 ou 24 mois. Par exemple, si vous anticipez vos vacances, votre abonnement pourra être suspendu pendant cette période. La salle est dotée de matériel professionnel, de bonne qualité et neuf. De nombreuses places de parking gratuites sont disponibles devant le local et un cabinet de kinésithérapie se trouve à côté. Tout simplement, Henko Coaching est une salle de sport à taille humaine, à l’abri des jugements et regards indiscrets qui s’adapte à vos besoins et votre situation. Retrouvez une salle de massage dans ce même espace.",
-	},
-	{
-		question: "Comment puis-je m’inscrire ?",
-		answer:
-			"Vous pouvez prendre contact avec moi par téléphone, mail ou via le formulaire de contact. Nous pouvons aussi convenir d’un rendez-vous à la salle. Vous avez besoin de vous munir ou de m’envoyer une copie de votre pièce d’identité.",
+			"Robin Aménagement vous accompagne pour tous vos projets extérieurs : petits travaux (pose de clôtures, réparations diverses), entretien de jardin (tonte, taille, nettoyage), aménagements plus complexes comme la création de terrasse ou d’allées, ainsi que la location de matériel pour vos chantiers personnels.",
 	},
 	{
 		question:
-			"Puis-je bénéficier d’un délai de rétractation après m’être abonnée sur une formule coaching avec engagement ?",
+			"Faut-il un minimum de surface ou de montant pour faire appel à vous ?",
 		answer:
-			"Non, il n’y a pas de délai de rétractation après la souscription d’une formule avec engagement. C’est pour cela que je vous propose de faire une séance d’essai avant de vous engager. Cette séance d’essai vous sera remboursée ou offerte si vous souscrivez à l’une des trois formules.",
+			"Non, il n’y a pas de minimum requis. Nous intervenons aussi bien pour des petites réparations que pour des projets de plus grande envergure. Chaque demande est étudiée pour vous proposer un devis personnalisé.",
+	},
+	{
+		question: "Comment obtenir un devis ?",
+		answer:
+			"Vous pouvez nous contacter par téléphone, par mail ou via le formulaire de contact sur le site. Une visite sur place peut être proposée pour évaluer précisément vos besoins.",
 	},
 	{
 		question:
-			"Est-ce que je peux me faire masser même si je ne fais pas de sport ?",
-		answer: "Bien-sûr, l’un n’empêche pas l’autre 😉",
+			"Proposez-vous la location de matériel sans prestation associée ?",
+		answer:
+			"Oui, la location de matériel est possible même si vous ne faites pas appel à nos services. Nous vous fournissons le matériel avec des consignes d’utilisation claires et assurons un suivi en cas de besoin.",
 	},
 	{
 		question:
-			"Je ne souhaite pas être coaché, est-ce-que je peux venir quand même pratiquer du sport en accès libre ?",
+			"Puis-je combiner plusieurs services (entretien + travaux par exemple) ?",
 		answer:
-			"Oui c’est possible, une formule accès libre avec plusieurs formules est proposée à partir du 1er février 2025.",
+			"Absolument ! Nos prestations sont modulables. Vous pouvez combiner plusieurs services dans un même devis ou planifier des interventions différentes selon vos priorités.",
 	},
 	{
-		question: "Existe-t-il des cours en small groupe ?",
-		answer: "Pas pour le moment, mais cela sera peut-être envisagé plus tard.",
+		question: "Travaillez-vous uniquement pour les particuliers ?",
+		answer:
+			"Non, nous travaillons aussi bien avec les particuliers qu’avec les professionnels ou les collectivités locales. N’hésitez pas à nous faire part de votre projet.",
 	},
 	{
-		question: "Quels sont les moyens de paiement possibles ?",
+		question: "Quels sont les moyens de paiement acceptés ?",
 		answer:
-			"Chèque, virement, espèces ou carte bancaire via un lien de paiement personnalisé qui vous sera envoyé.",
+			"Vous pouvez régler par chèque, virement bancaire ou espèces. Un acompte peut être demandé selon le montant des travaux ou la durée de location du matériel.",
 	},
 ];
 

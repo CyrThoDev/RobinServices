@@ -3,6 +3,8 @@ import NavBar from "@/components/organisms/NavBar";
 import Reservation from "@/components/organisms/Reservation";
 import Image from "next/image";
 import InterventionZone from "@/components/organisms/InterventionZone";
+import MansonryHomePage from "@/components/organisms/MansonryHomePage";
+import GoogleReviews from "@/components/organisms/GoogleReviews";
 export default function Home() {
 	return (
 		<>
@@ -20,6 +22,8 @@ export default function Home() {
 			</div>
 			<Reservation />
 			<InterventionZone />
+			<MansonryHomePage />
+			<GoogleReviews />
 		</>
 	);
 }
