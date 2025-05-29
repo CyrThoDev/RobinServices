@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Button from "../atoms/Button";
+import CurrentYear from "../molecules/CurrentYear";
 
 function Footer() {
 	return (
@@ -31,7 +32,7 @@ function Footer() {
 			</div>
 			<div className="w-full h-[1px] bg-white my-4" />
 			<div className="flex flex-col md:flex-row justify-between items-center">
-				{new Date().getFullYear()} - Robin Services
+				<CurrentYear />
 				<div className="flex flex-col md:flex-row gap-4">
 					<p>Mentions légales</p>
 					<p>Confidentialité</p>
