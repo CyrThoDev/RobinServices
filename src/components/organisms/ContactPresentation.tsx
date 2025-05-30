@@ -29,7 +29,7 @@ function ContactPresentation() {
 			</div>
 			<div className="lg:w-1/2  ">
 				<Image
-					src="/maison.jpg"
+					src="/cloture5.jpg"
 					alt="Image à droite"
 					width={500}
 					height={500}

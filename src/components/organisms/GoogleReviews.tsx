@@ -27,7 +27,7 @@ export default function GoogleReviews() {
 	}, []);
 
 	return (
-		<div className="px-10 lg:px-20 flex flex-col gap-10 py-10">
+		<div className="px-10  flex flex-col gap-10 py-10">
 			<h2 className="text-3xl font-bold text-center pb-2 relative inline-block">
 				<span className="relative z-10">Avis et Témoignages</span>
 				<div className="mx-auto mt-2 h-0.5 bg-secondary w-[80%] max-w-xs rounded-full" />
@@ -37,10 +37,23 @@ export default function GoogleReviews() {
 			<div className="w-full lg:hidden">
 				{reviews.length > 0 ? (
 					<Swiper
-						slidesPerView={1.2}
+						breakpoints={{
+							0: {
+								slidesPerView: 1.3, // Mobile
+							},
+							640: {
+								slidesPerView: 1.5, // Petites tablettes
+							},
+							768: {
+								slidesPerView: 2, // Tablette
+							},
+							1024: {
+								slidesPerView: 3, // Desktop
+							},
+						}}
 						spaceBetween={20}
 						modules={[Pagination]}
-						pagination={{ clickable: true }}
+						// pagination={{ clickable: true }}
 						className="mySwiper"
 					>
 						{reviews.map((review) => (

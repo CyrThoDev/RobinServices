@@ -2,11 +2,12 @@
 import Image from "next/image";
 
 const images = [
-	"/maison.jpg",
-	"/FondHero.png",
-	"/Frame.webp",
-	"/maison.jpg",
-	"/maison.jpg",
+	"/construction6.jpg",
+	"/bardage3.jpg",
+	"/construction5.jpg",
+	"/construction1.jpg",
+	"/bardage2.jpg",
+	"/construction6.jpg",
 	"/maison.jpg",
 ];
 
