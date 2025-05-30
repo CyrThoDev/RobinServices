@@ -34,10 +34,10 @@ function Apropos() {
 					autres demandes spécifiques.
 				</p>
 				<p>
-					Titulaire d'un CAP constructeur bois, je m'efforce de pérenniser un
-					savoir-faire, de soigner la propreté de mes chantiers, d'échanger et
-					d'apporter les meilleures solutions à mes clients, dont 73 % m'ont
-					recontacté pour d'autres travaux.
+					Titulaire d&#39;un CAP constructeur bois, je m&#39;efforce de
+					pérenniser un savoir-faire, de soigner la propreté de mes chantiers,
+					d&#39;échanger et d&#39;apporter les meilleures solutions à mes
+					clients, dont 73 % m&#39;ont recontacté pour d&#39;autres travaux.
 				</p>
 			</div>
 
