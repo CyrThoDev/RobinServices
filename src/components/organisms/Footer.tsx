@@ -33,7 +33,7 @@ function Footer() {
 			<div className="w-full h-[1px] bg-white my-4" />
 			<div className="flex flex-col md:flex-row justify-between items-center">
 				<CurrentYear />
-				<div className="flex flex-col md:flex-row gap-4">
+				<div className="flex flex-col items-center md:flex-row gap-4">
 					<p>Mentions légales</p>
 					<p>Confidentialité</p>
 					<p>CGV</p>
