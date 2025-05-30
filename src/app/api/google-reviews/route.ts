@@ -2,7 +2,18 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 
 // 🔒 Cache local côté serveur
-let cachedReviews: any[] | null = null;
+interface GoogleReview {
+	author_name: string;
+	author_url: string;
+	language: string;
+	profile_photo_url: string;
+	rating: number;
+	relative_time_description: string;
+	text: string;
+	time: number;
+}
+
+let cachedReviews: GoogleReview[] | null = null;
 let lastFetched: number | null = null;
 const CACHE_DURATION = 1000 * 60 * 60; // 1 heure
 
@@ -47,10 +58,14 @@ export async function GET() {
 		console.log("✅ Avis mis en cache");
 
 		return NextResponse.json(reviews);
-	} catch (error: any) {
+	} catch (error) {
+		let errorMessage = "Erreur lors de la récupération des avis";
+		if (error instanceof Error) {
+			errorMessage = error.message;
+		}
 		console.error(
 			"❌ Erreur lors de la récupération des avis Google:",
-			error?.message || error,
+			errorMessage,
 		);
 		return NextResponse.json(
 			{ error: "Erreur lors de la récupération des avis" },
