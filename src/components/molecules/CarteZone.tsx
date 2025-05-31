@@ -16,12 +16,18 @@ export default function CarteZone() {
 	}, []);
 
 	return (
-		<section className="w-full h-[500px] ">
+		<section className="w-full h-[500px] p-10">
 			<div className="w-full h-full">
 				<MapContainer
 					center={center}
 					zoom={10}
 					style={{ height: "100%", width: "100%" }}
+					scrollWheelZoom={false}
+					dragging={true}
+					doubleClickZoom={false}
+					touchZoom={true}
+					zoomControl={true}
+					className="rounded-xl"
 				>
 					<TileLayer
 						attribution="&copy; OpenStreetMap contributors"

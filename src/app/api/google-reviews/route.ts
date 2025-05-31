@@ -38,7 +38,7 @@ export async function GET() {
 		}
 
 		const response = await axios.get(
-			`https://maps.googleapis.com/maps/api/place/details/json`,
+			"https://maps.googleapis.com/maps/api/place/details/json",
 			{
 				params: {
 					place_id: placeId,

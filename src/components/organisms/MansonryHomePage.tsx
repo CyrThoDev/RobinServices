@@ -14,7 +14,7 @@ const images = [
 export default function MasonryHomePage() {
 	return (
 		<div
-			className="relative bg-cover bg-center bg-no-repeat py-20 px-10"
+			className="relative bg-cover bg-center bg-no-repeat py-10 px-10"
 			style={{ backgroundImage: 'url("/maison.jpg")' }}
 		>
 			<div className="absolute inset-0 bg-white/60 z-0" />

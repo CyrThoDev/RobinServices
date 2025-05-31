@@ -28,7 +28,7 @@ function NavBar() {
 			{/* Mobile menu */}
 			<div
 				className={`${
-					isSticky ? "sticky top-0 py-4 px-10 bg-primary shadow-md" : ""
+					isSticky ? "sticky top-0 py-4 px-10 bg-white shadow-md" : "bg-white"
 				}  py-4 px-10 flex items-center justify-between  min-[1150px]:hidden z-20 transition-all duration-300 `}
 			>
 				<Logo />
@@ -38,9 +38,9 @@ function NavBar() {
 					onClick={toggleNav}
 					aria-label="Ouvrir le menu mobile"
 				>
-					<span className="block h-0.5 w-8 lg:bg-white bg-primary" />
-					<span className="block h-0.5 w-8 lg:bg-white bg-primary" />
-					<span className="block h-0.5 w-8 lg:bg-white bg-primary" />
+					<span className="block h-0.5 w-8 bg-black " />
+					<span className="block h-0.5 w-8 bg-black  " />
+					<span className="block h-0.5 w-8 bg-black  " />
 				</button>
 
 				<MobileMenu isNavOpen={isNavOpen} toggleNav={toggleNav} />
@@ -64,14 +64,17 @@ function NavBar() {
 
 				<Menu />
 				<div className="flex flex-row items-center gap-12">
-					<Link href="" className="font-medium">
-						06 06 06 06 06
-					</Link>
 					<Button
 						title="RESERVER UN SERVICE"
 						width="max-w-fit"
 						link="/contact"
 					/>
+					<Link
+						href="Tel:+33678913974"
+						className=" text-black  font-medium border-2 py-3  px-3 rounded-md"
+					>
+						06 78 91 39 74
+					</Link>
 				</div>
 			</div>
 		</>

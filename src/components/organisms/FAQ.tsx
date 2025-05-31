@@ -83,11 +83,11 @@ function FAQ() {
 					</div>
 				))}
 				<p className="text-center">
-					Tu n’as pas trouvé réponse à ta question ?
+					Tu n&#39;as pas trouvé réponse à ta question ?
 				</p>
 				<Button
 					title="JE SOUHAITE AVOIR PLUS D'INFOS"
-					link="/#contact"
+					link="/contact"
 					width="w-[18rem] md:w-[20rem]"
 				/>
 			</div>

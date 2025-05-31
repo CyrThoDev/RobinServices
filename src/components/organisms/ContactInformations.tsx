@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../atoms/Button";
+import Link from "next/link";
 
 function ContactInformations() {
 	return (
@@ -15,11 +16,20 @@ function ContactInformations() {
 			<div className="flex flex-col lg:flex-row justify-around gap-8 lg:gap-0 ">
 				<div className="flex flex-col lg:items-center gap-4">
 					<p>Echangeons sur votre projet par télephone</p>
-					<Button title="06 06 06 06 06" width="max-w-fit" link="/contact" />
+					<Button
+						title="06 78 91 39 74"
+						width="max-w-fit"
+						link="Tel:+33678913974"
+					/>
 				</div>
 				<div className="flex flex-col lg:items-center gap-4">
 					<p>Parlez moi de votre projet par mail </p>
-					<Button title="mail@mail.com" width="max-w-fit" link="/contact" />
+
+					<Button
+						title="robinnicolas40@gmail.com"
+						width="max-w-fit"
+						link="mailto:robinnicolas40@gmail.com"
+					/>
 				</div>
 			</div>
 		</div>

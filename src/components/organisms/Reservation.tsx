@@ -30,9 +30,9 @@ const steps = [
 ];
 export default function Reservation() {
 	return (
-		<div className="bg-primary text-white pb-8">
+		<div className="bg-primary text-white py-20">
 			<div className="flex flex-col gap-8">
-				<h2 className="text-center text-3xl font-bold py-8">
+				<h2 className="text-center text-3xl font-bold pb-10">
 					Réservez votre service en 3 étapes
 				</h2>
 				<div className="md:block relative">
