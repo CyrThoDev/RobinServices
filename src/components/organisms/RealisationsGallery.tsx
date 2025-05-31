@@ -9,7 +9,7 @@ interface Realisation {
 	titre: string;
 	alt: string;
 	categorie: string;
-	image: any;
+	image: unknown; // or use a more specific type if you know the structure, e.g. SanityImageSource
 }
 
 export default function RealisationsGallery({
@@ -35,6 +35,7 @@ export default function RealisationsGallery({
 
 			<div className="flex flex-wrap justify-center gap-4 mb-6">
 				<button
+					type="button"
 					onClick={() => setActiveCategory(null)}
 					className={`px-4 py-2 rounded-full text-white ${
 						!activeCategory ? "bg-primary" : "bg-gray-300"
@@ -44,6 +45,7 @@ export default function RealisationsGallery({
 				</button>
 				{categories.map((cat) => (
 					<button
+						type="button"
 						key={cat}
 						onClick={() => setActiveCategory(cat)}
 						className={`px-4 py-2 rounded-full text-white ${

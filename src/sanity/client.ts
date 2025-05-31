@@ -9,4 +9,5 @@ export const client = createClient({
 });
 
 const builder = imageUrlBuilder(client);
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export const urlFor = (source: any) => builder.image(source);

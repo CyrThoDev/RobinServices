@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "../atoms/Button";
-import Link from "next/link";
 
 function ContactInformations() {
 	return (
