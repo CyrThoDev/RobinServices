@@ -4,12 +4,20 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import { urlFor } from "@/sanity/client";
 
+interface SanityImageAsset {
+	_type: "image";
+	asset: {
+		_ref: string;
+		_type: "reference";
+	};
+}
+
 interface Realisation {
 	_id: string;
 	titre: string;
 	alt: string;
 	categorie: string;
-	image: unknown; // or use a more specific type if you know the structure, e.g. SanityImageSource
+	image: SanityImageAsset;
 }
 
 export default function RealisationsGallery({
