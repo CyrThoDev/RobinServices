@@ -12,7 +12,6 @@ function Button({ title, link, width }: ButtonPropsType) {
 		<Link
 			href={link}
 			className={`bg-secondary text-black font-medium text-center rounded-md py-3 px-4 ${width} block focus:outline-none`}
-			target="_blank"
 		>
 			{title}
 		</Link>

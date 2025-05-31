@@ -1,5 +1,7 @@
+import FAQ from "@/components/organisms/FAQ";
+
 function Services() {
-	return <div>Services</div>;
+	return <FAQ />;
 }
 
 export default Services;

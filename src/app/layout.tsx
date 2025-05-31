@@ -36,8 +36,8 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} ${quicksand.variable}  font-quicksand antialiased`}
 			>
 				{children}
+				<Footer />
 			</body>
-			<Footer />
 		</html>
 	);
 }

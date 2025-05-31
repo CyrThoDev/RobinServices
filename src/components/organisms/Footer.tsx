@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Button from "../atoms/Button";
+import CurrentYear from "../molecules/CurrentYear";
 
 function Footer() {
 	return (
@@ -13,7 +14,9 @@ function Footer() {
 					<div className="flex flex-col items-center gap-4 order-3 lg:order-none lg:gap-8">
 						<div className="flex flex-col gap-2 ">
 							<h2 className="text-center font-bold text-xl">Email</h2>
-							<Link href="mailto:mail@mail.com">mail@mail.com</Link>
+							<Link href="mailto:robinnicolas40@gmail.com">
+								robinnicolas40@gmail.com
+							</Link>
 						</div>
 						<div className="max-w-fit justify-center mx-auto">
 							<Button
@@ -25,14 +28,14 @@ function Footer() {
 					</div>
 					<div className="flex flex-col items-end gap-2 ">
 						<h2 className="font-bold text-xl">Téléphone</h2>
-						<Link href="tel:0606060606">0606060606</Link>
+						<Link href="Tel:+33678913974">06 78 91 39 74</Link>
 					</div>
 				</div>
 			</div>
 			<div className="w-full h-[1px] bg-white my-4" />
-			<div className="flex flex-col md:flex-row justify-between items-center">
-				{new Date().getFullYear()} - Robin Services
-				<div className="flex flex-col md:flex-row gap-4">
+			<div className="flex flex-col-reverse md:flex-row justify-between items-center">
+				<CurrentYear />
+				<div className="flex flex-col items-center md:flex-row gap-4 pb-4 md:pb-0">
 					<p>Mentions légales</p>
 					<p>Confidentialité</p>
 					<p>CGV</p>

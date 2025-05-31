@@ -2,23 +2,30 @@ import Hero from "@/components/organisms/Hero";
 import NavBar from "@/components/organisms/NavBar";
 import Reservation from "@/components/organisms/Reservation";
 import Image from "next/image";
-
+import InterventionZone from "@/components/organisms/InterventionZone";
+import MansonryHomePage from "@/components/organisms/MansonryHomePage";
+import GoogleReviews from "@/components/organisms/GoogleReviews";
 export default function Home() {
 	return (
 		<>
-			<div className="relative w-full h-screen">
+			<NavBar />
+			<div className="relative w-full min-h-screen">
 				<Image
-					src="/FondHero.png" // <- image d’arrière-plan
+					src="/FondHero.png"
 					alt="Image de fond"
 					fill
 					priority
+					className="object-cover"
 				/>
-				<div className="absolute top-0 left-0 w-full h-full flex flex-col   ">
-					<NavBar />
+				<div className="relative z-10">
 					<Hero />
 				</div>
 			</div>
+
 			<Reservation />
+			<InterventionZone />
+			<MansonryHomePage />
+			<GoogleReviews />
 		</>
 	);
 }
