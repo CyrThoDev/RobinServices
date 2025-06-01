@@ -53,7 +53,7 @@ async function getServices() {
 	return await client.fetch(query);
 }
 
-function ServiceCard({ service }: { service: Service }) {
+function ServiceCard({ service }: { service: ServiceType }) {
 	const imageUrl = urlFor(service.image).width(800).height(400).url();
 
 	return (
