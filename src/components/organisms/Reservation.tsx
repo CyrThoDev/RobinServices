@@ -30,9 +30,9 @@ const steps = [
 ];
 export default function Reservation() {
 	return (
-		<div className="bg-primary text-white py-20">
+		<div className="bg-primary text-white py-10 lg:py-20 px-10">
 			<div className="flex flex-col gap-8">
-				<h2 className="text-center text-3xl font-bold pb-10">
+				<h2 className="text-center text-2xl md:text-3xl font-bold pb-10">
 					Réservez votre service en 3 étapes
 				</h2>
 				<div className="md:block relative">
@@ -55,7 +55,7 @@ export default function Reservation() {
 						</div>
 					</div>
 				</div>
-				<div className="mx-auto flex flex-col items-center justify-center px-10 xl:px-20">
+				<div className="mx-auto flex flex-col items-center justify-center ">
 					<Button
 						title="RESERVER UN SERVICE"
 						width="max-w-fit"

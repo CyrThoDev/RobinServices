@@ -2,6 +2,22 @@ import { groq } from "next-sanity";
 import { client, urlFor } from "@/sanity/client";
 import Image from "next/image";
 
+export interface ServiceType {
+	_id: string;
+	titre: string;
+	slug: { current: string };
+	description: string;
+	image: {
+		_type: "image";
+		asset: {
+			_ref: string;
+			_type: "reference" | "sanity.imageAsset";
+		};
+	};
+	bouton: string;
+	couleurBouton: string;
+}
+
 export const revalidate = 60; // ISR: refresh every 60s
 
 export default async function ServicesPage() {
@@ -15,7 +31,7 @@ export default async function ServicesPage() {
 			<div className="w-16 h-[2px] bg-yellow-400 mx-auto mb-12" />
 
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-				{services.map((service) => (
+				{services.map((service: ServiceType) => (
 					<ServiceCard key={service._id} service={service} />
 				))}
 				s

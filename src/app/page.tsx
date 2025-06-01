@@ -9,7 +9,7 @@ export default function Home() {
 	return (
 		<>
 			<NavBar />
-			<section className=" bg-[#f9f6f2] relative w-full min-h-screen flex items-center justify-center">
+			<section className=" bg-[#f9f6f2] relative w-full py-14 lg:min-h-screen flex items-center justify-center">
 				<Image
 					src="/FondHero.png"
 					alt="Image de fond"

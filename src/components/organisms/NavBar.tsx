@@ -30,7 +30,7 @@ function NavBar() {
 				className={`${
 					isSticky
 						? "sticky top-0 py-4 px-10 bg-[#f9f6f2] shadow-md"
-						: "bg-[#f9f6f2]"
+						: "bg-primary"
 				}  py-4 px-10 flex items-center justify-between  min-[1150px]:hidden z-20 transition-all duration-300 `}
 			>
 				<Logo />

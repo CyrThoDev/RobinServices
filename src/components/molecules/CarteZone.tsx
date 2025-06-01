@@ -16,7 +16,7 @@ export default function CarteZone() {
 	}, []);
 
 	return (
-		<section className="w-full h-[500px] p-10">
+		<section className="w-full h-[500px] px-10 pb-10 lg:py-10">
 			<div className="w-full h-full">
 				<MapContainer
 					center={center}
