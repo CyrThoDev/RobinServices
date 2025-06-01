@@ -23,7 +23,7 @@ const transformGoogleUrl = (url: string) => {
 
 export default function ReviewCard({ review }: { review: Review }) {
 	return (
-		<div className="w-full max-w-lg border-[0.025rem] rounded-xl border-gold flex flex-col justify-between gap-2 p-4 shadow-lg bg-white">
+		<div className="w-full max-w-lg border-[0.025rem] rounded-xl border-gold flex flex-col justify-between gap-2 p-4 shadow-lg">
 			{/* Nom */}
 			<p className="text-mb font-bold font-poppin">
 				{review.author_name.split(" ")[0].toUpperCase()}

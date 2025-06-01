@@ -9,7 +9,7 @@ export default function Home() {
 	return (
 		<>
 			<NavBar />
-			<div className="relative w-full min-h-screen">
+			<section className=" bg-[#f9f6f2] relative w-full min-h-screen flex items-center justify-center">
 				<Image
 					src="/FondHero.png"
 					alt="Image de fond"
@@ -17,10 +17,10 @@ export default function Home() {
 					priority
 					className="object-cover"
 				/>
-				<div className="relative z-10">
+				<div className="  w-full relative z-10">
 					<Hero />
 				</div>
-			</div>
+			</section>
 
 			<Reservation />
 			<InterventionZone />

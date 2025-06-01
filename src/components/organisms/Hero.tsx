@@ -4,7 +4,7 @@ import Button from "../atoms/Button";
 function Hero() {
 	return (
 		<>
-			<div className="h-full flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-10 xl:px-20 gap-10 md:gap-14 py-10">
+			<div className="h-full flex flex-col-reverse md:flex-row items-center justify-around px-6 md:px-10 xl:px-20 gap-10 md:gap-14 py-10">
 				<div className="flex flex-col gap-6 text-center md:text-left">
 					<h1 className="text-4xl md:text-6xl font-bold mb-4">
 						Robin Services
@@ -21,11 +21,11 @@ function Hero() {
 					/>
 				</div>
 
-				<div className="w-full max-w-sm md:max-w-md lg:max-w-xl">
+				<div className="w-full max-w-md md:max-w-lg lg:max-w-2xl">
 					<Image
 						src="/cloture4.jpg"
 						alt="Image à droite"
-						width={700}
+						width={900}
 						height={700}
 						className="w-full h-auto object-cover rounded-md shadow-2xl"
 					/>

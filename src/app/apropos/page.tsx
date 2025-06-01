@@ -23,7 +23,7 @@ function Apropos() {
 			</div>
 
 			{/* SECTION BLANCHE */}
-			<div className="bg-white pt-50 lg:pt-60 lg:max-w-4xl mx-auto pb-20 px-10 lg:px-0">
+			<div className="pt-50 lg:pt-60 lg:max-w-4xl mx-auto pb-20 px-10 lg:px-0">
 				<p className="mb-6">
 					Mon entreprise ROBIN AMENAGEMENTS, créée en 2014, vise la construction
 					bois sur vos espaces extérieurs dans le secteur de la communauté des

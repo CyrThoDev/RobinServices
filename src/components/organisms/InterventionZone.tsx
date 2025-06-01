@@ -4,7 +4,7 @@ import CarteZoneWrapper from "../molecules/CarteZoneWrapper";
 
 function InterventionZone() {
 	return (
-		<section className="">
+		<section className="bg-[#f9f6f2]">
 			<div className=" flex flex-col lg:flex-row items-center justify-between gap-12">
 				<div className="w-full lg:w-1/2">
 					<InterventionCities />

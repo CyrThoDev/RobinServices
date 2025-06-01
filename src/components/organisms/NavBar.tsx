@@ -28,7 +28,9 @@ function NavBar() {
 			{/* Mobile menu */}
 			<div
 				className={`${
-					isSticky ? "sticky top-0 py-4 px-10 bg-white shadow-md" : "bg-white"
+					isSticky
+						? "sticky top-0 py-4 px-10 bg-[#f9f6f2] shadow-md"
+						: "bg-[#f9f6f2]"
 				}  py-4 px-10 flex items-center justify-between  min-[1150px]:hidden z-20 transition-all duration-300 `}
 			>
 				<Logo />
@@ -49,7 +51,7 @@ function NavBar() {
 			{/*Desktop menu*/}
 			<div
 				className={`hidden ${
-					isSticky ? "sticky top-0 bg-white shadow-md" : ""
+					isSticky ? "sticky top-0 bg-[#f9f6f2] shadow-md" : "bg-[#f9f6f2]"
 				} min-[1150px]:flex justify-between  px-10 xl:px-20 py-4 z-20`}
 			>
 				<Link href="/">
