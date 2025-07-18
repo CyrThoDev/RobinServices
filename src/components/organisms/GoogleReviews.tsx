@@ -27,10 +27,11 @@ export default function GoogleReviews() {
 	}, []);
 
 	return (
-		<div className="px-10  flex flex-col gap-10 py-10 bg-[#f9f6f2]">
-			<h2 className="text-3xl font-bold text-center pb-2 relative inline-block">
-				<span className="relative z-10">Avis et Témoignages</span>
-				<div className="mx-auto mt-2 h-0.5 bg-secondary w-[80%] max-w-xs rounded-full" />
+		<div className="px-10  flex flex-col gap-10 py-10 bg-lightbg">
+		<h2 className="text-3xl font-bold text-center pb-2 relative inline-block">
+				<span className="relative z-10 text-dark">Avis et témoignages
+				</span>
+				<div className="mx-auto mt-2 h-0.5 bg-orange w-[80%] max-w-xs rounded-full" />
 			</h2>
 
 			{/* Swiper mobile */}
@@ -80,8 +81,8 @@ export default function GoogleReviews() {
 				)}
 			</div>
 
-			<div className="self-center flex flex-col lg:flex-row gap-4">
-				<Button title="DEPOSER UN AVIS" link="" width="w-[16rem]" />
+			<div className="self-center  flex flex-col lg:flex-row gap-4">
+				<Button title="Déposer un avis" link="" width="max-w-fit" />
 			</div>
 		</div>
 	);

@@ -23,7 +23,7 @@ function MobileMenu({ isNavOpen, toggleNav }: MobileMenuPropsType) {
 				aria-label="Fermer le menu"
 			>
 				<svg
-					className="h-8 w-8 text-black"
+					className="h-8 w-8 text-darkbraun"
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"

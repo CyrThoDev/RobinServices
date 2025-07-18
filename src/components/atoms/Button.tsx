@@ -1,21 +1,18 @@
+// atoms/Button.tsx
 import Link from "next/link";
-import React from "react";
 
-type ButtonPropsType = {
-	title: string;
-	link: string;
-	width?: string;
-};
+export default function Button({ title, link = "#", variant = "primary", width = "" }) {
+	const base =
+		"px-6 py-3 rounded-2xl font-semibold transition text-center flex items-center justify-center";
 
-function Button({ title, link, width }: ButtonPropsType) {
+	const styles = {
+		primary: "bg-orange text-white hover:bg-[#5E3A1B]",
+		secondary: "border border-[#D9C8BA] text-darkbraun hover:bg-[#DBBEA4]",
+	};
+
 	return (
-		<Link
-			href={link}
-			className={`bg-secondary text-black font-medium text-center rounded-md py-3 px-4 ${width} block focus:outline-none`}
-		>
+		<Link href={link} className={`${base} ${styles[variant]} ${width}`}>
 			{title}
 		</Link>
 	);
 }
-
-export default Button;

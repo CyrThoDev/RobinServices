@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function Menu() {
 	return (
-		<div className="flex flex-col lg:flex-row justify-center items-center gap-8  font-medium ">
+		<div className="flex flex-col lg:flex-row justify-center items-center gap-8  font-medium  text-black  ">
 			<Link href="/">Accueil</Link>
 			<Link href="/services">Services</Link>
 			<Link href="/realisations">Réalisations</Link>

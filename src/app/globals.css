@@ -11,8 +11,14 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-quicksand: var(--font-quicksand);
-  --color-primary: #036183;
-  --color-secondary : #FFB903}
+    --color-darkgreen: #175857;
+  --color-lightbraun: #ae6f36;
+  --color-darkbraun: #7E4F25;
+  --color-lightbg: #FAF6F1;
+  --color-textdark: #2D2212;
+  --color-lightgreen : #257E7C;
+   --color-cream : #fceee7;
+--color-orange : #e09049}
 
 
 /* styles/background.css */
@@ -37,4 +43,25 @@
   .backgroundImage {
     background-image: url('../../public/FondHero.png');
   }
+}
+
+.custom-shape-divider-bottom-1749304765 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1749304765 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1749304765 .shape-fill {
+    fill: #8C5B27;
 }

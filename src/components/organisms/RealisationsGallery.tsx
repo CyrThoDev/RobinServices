@@ -38,7 +38,7 @@ export default function RealisationsGallery({
 		<section className="p-6 md:p-10 flex flex-col gap-6">
 			<h1 className="text-3xl font-bold text-center pb-2 relative inline-block">
 				<span className="relative z-10">Mes réalisations</span>
-				<div className="mx-auto mt-2 h-0.5 bg-secondary w-[80%] max-w-xs rounded-full" />
+				<div className="mx-auto mt-2 h-0.5 bg-button w-[80%] max-w-xs rounded-full" />
 			</h1>
 
 			<div className="flex flex-wrap justify-center gap-4 mb-6">
@@ -46,7 +46,7 @@ export default function RealisationsGallery({
 					type="button"
 					onClick={() => setActiveCategory(null)}
 					className={`px-4 py-2 rounded-full text-white ${
-						!activeCategory ? "bg-primary" : "bg-gray-300"
+						!activeCategory ? "bg-button" : "bg-gray-300"
 					}`}
 				>
 					Tout
@@ -57,7 +57,7 @@ export default function RealisationsGallery({
 						key={cat}
 						onClick={() => setActiveCategory(cat)}
 						className={`px-4 py-2 rounded-full text-white ${
-							activeCategory === cat ? "bg-primary" : "bg-gray-300"
+							activeCategory === cat ? "bg-button" : "bg-gray-300"
 						}`}
 					>
 						{cat}

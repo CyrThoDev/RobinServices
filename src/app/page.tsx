@@ -5,27 +5,36 @@ import Image from "next/image";
 import InterventionZone from "@/components/organisms/InterventionZone";
 import MansonryHomePage from "@/components/organisms/MansonryHomePage";
 import GoogleReviews from "@/components/organisms/GoogleReviews";
+import NewHero from "@/components/organisms/NewHero";
+import Summary from "@/components/organisms/Summary";
 export default function Home() {
 	return (
-		<>
+		<div className=" flex flex-col ">
+			<div >
 			<NavBar />
-			<section className=" bg-[#f9f6f2] relative w-full py-14 lg:min-h-screen flex items-center justify-center">
-				<Image
+			<section>
+				{/* <Image
 					src="/FondHero.png"
 					alt="Image de fond"
 					fill
 					priority
 					className="object-cover"
-				/>
-				<div className="  w-full relative z-10">
-					<Hero />
-				</div>
+				/> */}
+			
+					{/* <Hero /> */}
+					<NewHero />
+				
 			</section>
-
+			<Summary />
 			<Reservation />
-			<InterventionZone />
+				<div className="h-px max-w-7xl bg-darkbraun my-4 mx-auto" />
+				<InterventionZone />
+			
 			<MansonryHomePage />
+		
+			
 			<GoogleReviews />
-		</>
+			</div>
+		</div>
 	);
 }

@@ -5,7 +5,7 @@ function Apropos() {
 	return (
 		<>
 			{/* SECTION BLEUE */}
-			<div className="relative bg-primary pb-20 lg:pb-40">
+			<div className="relative bg-darkgreen pb-20 lg:pb-40">
 				<h1 className="py-20 text-center text-white text-3xl font-bold ">
 					A PROPOS
 				</h1>
@@ -45,7 +45,7 @@ function Apropos() {
 				<Button
 					title="JE SOUHAITE DISCUTER DE MON PROJET"
 					link="/contact"
-					width="w-[20rem] md:w-[22rem]"
+					width="max-w-fit"
 				/>
 			</div>
 		</>

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Button from "../atoms/Button";
-import Image from "next/image";
+
 import Menu from "../molecules/Menu";
 import { useEffect, useState } from "react";
 import MobileMenu from "../molecules/MobileMenu";
@@ -29,8 +29,8 @@ function NavBar() {
 			<div
 				className={`${
 					isSticky
-						? "sticky top-0 py-4 px-10 bg-[#f9f6f2] shadow-md"
-						: "bg-primary"
+						? "sticky top-0 py-4 px-10 bg-lightbg shadow-md"
+						: "bg-lightbg"
 				}  py-4 px-10 flex items-center justify-between  min-[1150px]:hidden z-20 transition-all duration-300 `}
 			>
 				<Logo />
@@ -40,9 +40,9 @@ function NavBar() {
 					onClick={toggleNav}
 					aria-label="Ouvrir le menu mobile"
 				>
-					<span className="block h-0.5 w-8 bg-black " />
-					<span className="block h-0.5 w-8 bg-black  " />
-					<span className="block h-0.5 w-8 bg-black  " />
+					<span className="block h-0.5 w-8 bg-darkbraun " />
+					<span className="block h-0.5 w-8 bg-darkbraun  " />
+					<span className="block h-0.5 w-8 bg-darkbraun " />
 				</button>
 
 				<MobileMenu isNavOpen={isNavOpen} toggleNav={toggleNav} />
@@ -51,29 +51,21 @@ function NavBar() {
 			{/*Desktop menu*/}
 			<div
 				className={`hidden ${
-					isSticky ? "sticky top-0 bg-[#f9f6f2] shadow-md" : "bg-[#f9f6f2]"
-				} min-[1150px]:flex justify-between  px-10 xl:px-20 py-4 z-20`}
+					isSticky ? "sticky top-0 bg-lightbg shadow-md" : "bg-lightbg"
+				}   min-[1150px]:flex justify-between  px-10 xl:px-20 py-4 z-50 `}
 			>
-				<Link href="/">
-					<Image
-						src="/Logosample.png"
-						alt="Logo"
-						width={100}
-						height={100}
-						className="hidden md:block"
-					/>
-				</Link>
+		<Logo />
 
 				<Menu />
 				<div className="flex flex-row items-center gap-12">
 					<Button
-						title="RESERVER UN SERVICE"
+						title="Réserver un service"
 						width="max-w-fit"
 						link="/contact"
 					/>
 					<Link
 						href="Tel:+33678913974"
-						className=" text-black  font-medium border-2 py-3  px-3 rounded-md"
+						className="px-6 py-3 border border-[#D9C8BA] text-darkbraun  rounded-2xl font-semibold hover:bg-[#DBBEA4] transition "
 					>
 						06 78 91 39 74
 					</Link>

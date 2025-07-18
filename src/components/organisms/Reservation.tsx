@@ -5,7 +5,7 @@ import Button from "../atoms/Button";
 const steps = [
 	{
 		id: 1,
-		src: "/Icone1.png",
+		src: "/tools.png",
 		alt: "Outils",
 		title: "Je choisis mon service",
 		description:
@@ -13,51 +13,64 @@ const steps = [
 	},
 	{
 		id: 2,
-		src: "/Icone1.png",
+		src: "/schedule.png",
 		alt: "Calendrier",
-		title: "On échange sur votre besoin Flexible",
+		title: "On échange sur votre besoin",
 		description:
 			"Un échange rapide pour comprendre votre projet et vous proposer la meilleure solution.",
 	},
 	{
 		id: 3,
-		src: "/Icone1.png",
+		src: "/home.png",
 		alt: "Maison",
 		title: "On planifie vos travaux",
 		description:
 			"Une fois le projet défini, nous fixons ensemble la date de l’intervention.",
 	},
 ];
+
 export default function Reservation() {
 	return (
-		<div className="bg-primary text-white py-10 lg:py-20 px-10">
-			<div className="flex flex-col gap-8">
-				<h2 className="text-center text-2xl md:text-3xl font-bold pb-10">
-					Réservez votre service en 3 étapes
+		<div className="bg-lightbg text-white py-20 px-10">
+			<div className="flex flex-col gap-12">
+				<h2 className="text-3xl font-bold text-center pb-2 relative inline-block">
+					<span className="relative z-10 text-black">
+						Réservez votre service en 3 étapes
+					</span>
+					<div className="mx-auto mt-2 h-0.5 bg-orange w-[80%] max-w-xs rounded-full" />
 				</h2>
-				<div className="md:block relative">
-					<div className="flex justify-center  items-center mb-8">
-						<div className="relative w-full lg:max-w-6xl flex flex-col gap-4 lg:flex-row justify-between items-center z-10">
-							{steps.map((step) => (
-								<div key={step.id}>
-									<IconStep {...step} />
-								</div>
-							))}
-							<div className="hidden lg:block lg:absolute lg:top-1/3 lg:left-[15%] lg:right-[15%] lg:transform lg:-translate-y-1/2  lg:-z-10">
-								<Image
-									src="/Dashline.png"
-									alt="ligne pointillée"
-									width={800}
-									height={20}
-									className="w-full h-auto"
-								/>
-							</div>
-						</div>
+
+				<div className="relative flex justify-center items-center mb-8">
+					<div className="relative w-full lg:max-w-6xl flex flex-col lg:flex-row justify-between items-stretch gap-8 text-black">
+					{steps.map((step) => (
+  <div
+    key={step.id}
+    className="flex flex-col items-center text-center max-w-xs min-h-[340px] h-full relative"
+  >
+    <IconStep {...step} />
+  </div>
+))}
+
+						{/* Ligne pointillée centrée derrière les blocs */}
+<div className="hidden lg:block absolute  top-1.5 left-[12%] right-[12%] z-0">
+  <Image
+    src="/Dashline.png"
+    alt="ligne pointillée"
+    width={1200}
+    height={20}
+    className="w-full h-auto"
+  />
+</div>
+
+
+
+
 					</div>
 				</div>
-				<div className="mx-auto flex flex-col items-center justify-center ">
+
+				<div className="mx-auto flex flex-col items-center justify-center">
 					<Button
-						title="RESERVER UN SERVICE"
+						title="Demander un devis"
 						width="max-w-fit"
 						link="/contact"
 					/>

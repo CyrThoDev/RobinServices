@@ -5,8 +5,8 @@ function Logo() {
 	return (
 		<Link href="/">
 			<Image
-				src={"/Logosample.png"}
-				alt="logo Orange Henko"
+				src={"/Logo.webp"}
+				alt="logo Marron Robin services habitat"
 				width={100}
 				height={70}
 			/>

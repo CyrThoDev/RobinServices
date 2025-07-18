@@ -23,9 +23,9 @@ const transformGoogleUrl = (url: string) => {
 
 export default function ReviewCard({ review }: { review: Review }) {
 	return (
-		<div className="w-full max-w-lg border-[0.025rem] rounded-xl border-gold flex flex-col justify-between gap-2 p-4 shadow-lg">
+		<div className="w-full max-w-lg border-[0.025rem] rounded-xl border-darkbraun flex flex-col justify-between gap-2 p-4 shadow-lg">
 			{/* Nom */}
-			<p className="text-mb font-bold font-poppin">
+			<p className="text-mb font-bold  text-dark">
 				{review.author_name.split(" ")[0].toUpperCase()}
 			</p>
 
@@ -40,7 +40,7 @@ export default function ReviewCard({ review }: { review: Review }) {
 			<div className="flex flex-col gap-1">
 				<Link
 					href={transformGoogleUrl(review.author_url)}
-					className="font-semibold text-darkorange hover:text-darkorange"
+					className="font-semibold text-orange hover:text-lightbraun"
 					target="_blank"
 				>
 					Lire plus
