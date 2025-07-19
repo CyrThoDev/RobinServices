@@ -41,18 +41,18 @@ export default function Reservation() {
 				</h2>
 
 				<div className="relative flex justify-center items-center mb-8">
-					<div className="relative w-full lg:max-w-6xl flex flex-col lg:flex-row justify-between items-stretch gap-8 text-black">
+					<div className=" relative w-full lg:max-w-6xl flex flex-col lg:flex-row justify-between items-center gap-8 text-black">
 					{steps.map((step) => (
   <div
     key={step.id}
-    className="flex flex-col items-center text-center max-w-xs min-h-[340px] h-full relative"
+    className="flex flex-col items-center  justify-center text-center max-w-xs min-h-[340px] h-full relative"
   >
     <IconStep {...step} />
   </div>
 ))}
 
 						{/* Ligne pointillée centrée derrière les blocs */}
-<div className="hidden lg:block absolute  top-1.5 left-[12%] right-[12%] z-0">
+<div className="hidden lg:block absolute -translate-y-10 left-[12%] right-[12%] z-0">
   <Image
     src="/Dashline.png"
     alt="ligne pointillée"
