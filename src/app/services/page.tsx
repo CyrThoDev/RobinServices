@@ -9,7 +9,7 @@ export interface ServiceType {
   titre: string;
   slug: { current: string };
 
-  description: any[];
+  description: string[];
   image?: {
     _type: "image";
     asset: {
