@@ -28,7 +28,7 @@ const Zones = [
 ];
 export default function InterventionCities() {
 	return (
-		<section className="pt-10 lg:pt-0 px-10 lg:px-20">
+		<section className=" lg:pt-0 px-10 lg:px-20">
 			<h2 className="text-3xl font-bold text-center pb-2 relative inline-block">
 				<span className="relative z-10 text-dark">Zone d&#39;intervention</span>
 				<div className="mx-auto mt-2 h-0.5 bg-orange w-[80%] max-w-xs rounded-full" />

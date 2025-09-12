@@ -86,7 +86,7 @@ function FAQ() {
 					Tu n&#39;as pas trouvé réponse à ta question ?
 				</p>
 				<Button
-					title="JE SOUHAITE AVOIR PLUS D'INFOS"
+					title="Je souhaite avoir plus d'infos"
 					link="/contact"
 					width="max-w-fit"
 				/>

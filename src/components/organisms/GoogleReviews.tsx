@@ -27,7 +27,7 @@ export default function GoogleReviews() {
 	}, []);
 
 	return (
-		<div className="px-10  flex flex-col gap-10 py-10 bg-lightbg">
+		<div className="px-10  flex flex-col gap-10 py-20 bg-lightbg">
 		<h2 className="text-3xl font-bold text-center pb-2 relative inline-block">
 				<span className="relative z-10 text-dark">Avis et témoignages
 				</span>
@@ -82,7 +82,7 @@ export default function GoogleReviews() {
 			</div>
 
 			<div className="self-center  flex flex-col lg:flex-row gap-4">
-				<Button title="Déposer un avis" link="" width="max-w-fit" />
+				<Button title="Déposer un avis" link="" width="max-w-fit" variant="secondary"/>
 			</div>
 		</div>
 	);

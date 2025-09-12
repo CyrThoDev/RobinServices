@@ -21,7 +21,7 @@ export default function Button({
 
   const styles: Record<Variant, string> = {
     primary: "bg-orange text-white hover:bg-[#5E3A1B]",
-    secondary: "border border-[#D9C8BA] text-darkbraun hover:bg-[#DBBEA4]",
+    secondary: "bg-darkgreen border border-[#D9C8BA] text-white hover:bg-[#DBBEA4]",
   };
 
   return (

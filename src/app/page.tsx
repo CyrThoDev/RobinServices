@@ -13,21 +13,13 @@ export default function Home() {
 			<div >
 			<NavBar />
 			<section>
-				{/* <Image
-					src="/FondHero.png"
-					alt="Image de fond"
-					fill
-					priority
-					className="object-cover"
-				/> */}
-			
-					{/* <Hero /> */}
+	
 					<NewHero />
 				
 			</section>
 			<Summary />
 			<Reservation />
-				<div className="h-px max-w-7xl bg-darkbraun my-4 mx-auto" />
+				{/* <div className="h-px max-w-2/3 bg-darkbraun  mx-auto" /> */}
 				<InterventionZone />
 			
 			<MansonryHomePage />

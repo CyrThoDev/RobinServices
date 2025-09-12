@@ -16,10 +16,13 @@ export default function IconStep({
 	description,
 }: IconStepProps) {
 	return (
-		<div className="flex flex-col items-center text-center z-20 max-w-xs h-full justify-between gap-6">
-			<ImageIcon src={src} alt={alt} />
+		<div className="flex flex-col  items-center gap-10 z-20">
+		<ImageIcon src={src} alt={alt} />
+		<div className="flex flex-col items-center text-center z-20 max-w-xs h-full justify-between gap-10">
+			
 			<StepTitle>{title}</StepTitle>
 			<StepDescription>{description}</StepDescription>
+		</div>
 		</div>
 	);
 }

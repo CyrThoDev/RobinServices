@@ -43,7 +43,7 @@ function Apropos() {
 
 			<div className="flex justify-center pb-20">
 				<Button
-					title="JE SOUHAITE DISCUTER DE MON PROJET"
+					title="Je souhaite discuter de mon projet"
 					link="/contact"
 					width="max-w-fit"
 				/>

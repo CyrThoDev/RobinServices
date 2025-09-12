@@ -32,8 +32,8 @@ const steps = [
 export default function Reservation() {
 	return (
 		<div className="bg-lightbg text-white py-20 px-10">
-			<div className="flex flex-col gap-12">
-				<h2 className="text-3xl font-bold text-center pb-2 relative inline-block">
+			<div className="  flex flex-col gap-4">
+				<h2 className="text-3xl font-bold text-center pb-2 relative inline-block mb-10">
 					<span className="relative z-10 text-black">
 						Réservez votre service en 3 étapes
 					</span>
@@ -45,7 +45,7 @@ export default function Reservation() {
 					{steps.map((step) => (
   <div
     key={step.id}
-    className="flex flex-col items-center  justify-center text-center max-w-xs min-h-[340px] h-full relative"
+    className="flex flex-col items-center  justify-between gap-6 text-center max-w-xs min-h-[300px] h-full relative"
   >
     <IconStep {...step} />
   </div>

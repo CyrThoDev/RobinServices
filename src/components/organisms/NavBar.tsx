@@ -6,6 +6,7 @@ import Menu from "../molecules/Menu";
 import { useEffect, useState } from "react";
 import MobileMenu from "../molecules/MobileMenu";
 import Logo from "../atoms/Logo";
+import { FaPhone } from "react-icons/fa";
 
 function NavBar() {
 	const [isNavOpen, setIsNavOpen] = useState(false);
@@ -58,17 +59,21 @@ function NavBar() {
 
 				<Menu />
 				<div className="flex flex-row items-center gap-12">
+					<div className="flex flex-row items-center gap-2">
+					<FaPhone className="  "/>
+						<Link
+						href="Tel:+33678913974"
+						className="   "
+					>
+						06 78 91 39 74
+					</Link>
+					</div>
 					<Button
 						title="Réserver un service"
 						width="max-w-fit"
 						link="/contact"
 					/>
-					<Link
-						href="Tel:+33678913974"
-						className="px-6 py-3 border border-[#D9C8BA] text-darkbraun  rounded-2xl font-semibold hover:bg-[#DBBEA4] transition "
-					>
-						06 78 91 39 74
-					</Link>
+				
 				</div>
 			</div>
 		</>

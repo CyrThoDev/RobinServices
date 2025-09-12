@@ -4,7 +4,7 @@ import CurrentYear from "../molecules/CurrentYear";
 
 function Footer() {
 	return (
-		<div className="bg-darkgreen text-white px-10 lg:px-20 py-8 font-medium">
+		<div className="bg-black/90 text-white px-10 lg:px-20 py-8 font-medium">
 			<div className="flex flex-col">
 				<div className="grid lg:grid-cols-3 lg:justify-items-between justify-items-center gap-4">
 					<div className="flex flex-col items-center lg:items-start gap-2 ">
