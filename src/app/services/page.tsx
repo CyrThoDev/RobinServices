@@ -1,16 +1,14 @@
-// app/services/page.tsx
 import { groq } from "next-sanity";
 import { client, urlFor } from "@/sanity/client";
 import Image from "next/image";
-import { PortableText, type PortableTextComponents } from "@portabletext/react";
-import type { PortableTextBlock } from "sanity";
-
+import { PortableText, PortableTextBlock, type PortableTextComponents } from "@portabletext/react";
 
 export interface ServiceType {
   _id: string;
   titre: string;
   slug: { current: string };
-  description: PortableTextBlock[] | string | string[];
+
+description: PortableTextBlock[] ;
   image?: {
     _type: "image";
     asset: {
@@ -20,7 +18,7 @@ export interface ServiceType {
     alt?: string;
   };
   bouton: string;
-  couleurBouton: "jaune" | "bleu" | "orange" | string;
+  couleurBouton: "jaune" | "bleu" | string;
 }
 
 export const revalidate = 60; // ISR: refresh every 60s
@@ -30,10 +28,12 @@ export default async function ServicesPage() {
 
   return (
     <main className="bg-[#f9f6f2] min-h-screen py-16 px-6 md:px-20 flex flex-col">
-      <h1 className="text-3xl font-bold text-center pb-2 relative inline-block">
-        <span className="relative z-10 text-black">Mes Services</span>
-        <div className="mx-auto mt-2 h-0.5 bg-orange w-[80%] max-w-xs rounded-full" />
-      </h1>
+  			<h1 className="text-3xl font-bold text-center pb-2 relative inline-block">
+					<span className="relative z-10 text-black">
+						Mes Services
+					</span>
+					<div className="mx-auto mt-2 h-0.5 bg-orange w-[80%] max-w-xs rounded-full" />
+				</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {services.map((service: ServiceType) => (
@@ -63,51 +63,11 @@ async function getServices(): Promise<ServiceType[]> {
   return await client.fetch(query);
 }
 
-/* =========================
-   Helpers typés (no any)
-   ========================= */
-function isPortableBlocks(input: unknown): input is PortableTextBlock[] {
-  if (!Array.isArray(input) || input.length === 0) return false;
-  const first = input[0] as unknown;
-  return typeof first === "object" && first !== null && "_type" in (first as Record<string, unknown>);
-}
-
-function makeBlock(text: string, i = 0): PortableTextBlock {
-  return {
-    _type: "block",
-    _key: `p-${i}`,
-    style: "normal",
-    markDefs: [],
-    children: [
-      {
-        _type: "span",
-        _key: `s-${i}`,
-        text,
-      },
-    ],
-  };
-}
-
-function toBlocks(desc: ServiceType["description"]): PortableTextBlock[] {
-  if (!desc) return [];
-  if (isPortableBlocks(desc)) return desc;
-  if (Array.isArray(desc)) {
-    return desc.map((t, i) => makeBlock(String(t), i));
-  }
-  return [makeBlock(String(desc), 0)];
-}
-
-/* =========================
-   PortableText components (props typées)
-   ========================= */
-type ImageValue = {
-  asset?: { url?: string; _ref?: string };
-  alt?: string;
-};
-
+// Composants PortableText (styles/annotations)
 const portableComponents: PortableTextComponents = {
   types: {
     image: ({ value }) => {
+      // value.asset peut contenir url si projeté, sinon construire via urlFor
       const src =
         value?.asset?.url ??
         (value?.asset?._ref ? urlFor(value).width(1200).url() : null);
@@ -148,11 +108,12 @@ const portableComponents: PortableTextComponents = {
   },
 };
 
-
 function ServiceCard({ service }: { service: ServiceType }) {
-  const imageUrl = service.image
-    ? urlFor(service.image).width(800).height(400).fit("max").url()
-    : null;
+  const imageUrl =
+    service.image
+      ? // si tu préfères toujours builder l’URL via urlFor :
+        urlFor(service.image).width(800).height(400).fit("max").url()
+      : null;
 
   const href = service.slug?.current ? `/${service.slug.current}` : "#";
   const boutonClasses =
@@ -177,9 +138,9 @@ function ServiceCard({ service }: { service: ServiceType }) {
 
       <h2 className="text-lg font-semibold">{service.titre}</h2>
 
-      {/* Description en PortableText (toujours des blocks) */}
+      {/* Description en PortableText */}
       <div className="text-sm text-red-500 leading-snug">
-        <PortableText components={portableComponents} value={toBlocks(service.description)} />
+        <PortableText value={service.description} components={portableComponents} />
       </div>
 
       <a
