@@ -2,7 +2,9 @@
 import { groq } from "next-sanity";
 import { client, urlFor } from "@/sanity/client";
 import Image from "next/image";
-import { PortableText, PortableTextBlock, type PortableTextComponents } from "@portabletext/react";
+// en haut du fichier
+import { PortableText, type PortableTextComponents } from "@portabletext/react";
+import type { PortableTextBlock } from "sanity"; // (au lieu de l'importer depuis @portabletext/react)
 
 export interface ServiceType {
   _id: string;
@@ -141,7 +143,29 @@ function ServiceCard({ service }: { service: ServiceType }) {
 
       {/* Description en PortableText */}
       <div className="text-sm text-red-500 leading-snug">
-        <PortableText value={service.description} components={portableComponents} />
+     <PortableText
+  components={portableComponents}
+  value={
+    Array.isArray(service.description) && (service.description as any)[0]?._type
+      // Déjà des blocks => on passe tel quel
+      ? (service.description as any)
+      // Sinon, on enveloppe string ou string[] dans un block Portable Text
+      : [{
+          _type: "block",
+          _key: "p0",
+          style: "normal",
+          markDefs: [],
+          children: [{
+            _type: "span",
+            _key: "s0",
+            text: Array.isArray(service.description)
+              ? (service.description as string[]).join("\n\n")
+              : (service.description ?? "")
+          }]
+        }]
+  }
+/>
+
       </div>
 
       <a
