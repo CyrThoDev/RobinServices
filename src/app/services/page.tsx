@@ -4,7 +4,7 @@ import { client, urlFor } from "@/sanity/client";
 import Image from "next/image";
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import type { PortableTextBlock } from "sanity";
-import type { ReactNode } from "react";
+
 
 export interface ServiceType {
   _id: string;
@@ -107,7 +107,7 @@ type ImageValue = {
 
 const portableComponents: PortableTextComponents = {
   types: {
-    image: ({ value }: { value: ImageValue }) => {
+    image: ({ value }) => {
       const src =
         value?.asset?.url ??
         (value?.asset?._ref ? urlFor(value).width(1200).url() : null);
@@ -121,30 +121,16 @@ const portableComponents: PortableTextComponents = {
     },
   },
   block: {
-    h1: ({ children }: { children: ReactNode }) => (
-      <h1 className="text-3xl font-bold mb-4">{children}</h1>
-    ),
-    h2: ({ children }: { children: ReactNode }) => (
-      <h2 className="text-2xl font-semibold mb-3">{children}</h2>
-    ),
-    h3: ({ children }: { children: ReactNode }) => (
-      <h3 className="text-xl font-semibold mb-2">{children}</h3>
-    ),
-    blockquote: ({ children }: { children: ReactNode }) => (
+    h1: ({ children }) => <h1 className="text-3xl font-bold mb-4">{children}</h1>,
+    h2: ({ children }) => <h2 className="text-2xl font-semibold mb-3">{children}</h2>,
+    h3: ({ children }) => <h3 className="text-xl font-semibold mb-2">{children}</h3>,
+    blockquote: ({ children }) => (
       <blockquote className="border-l-4 pl-4 italic my-4">{children}</blockquote>
     ),
-    normal: ({ children }: { children: ReactNode }) => (
-      <p className="mb-3 leading-relaxed">{children}</p>
-    ),
+    normal: ({ children }) => <p className="mb-3 leading-relaxed">{children}</p>,
   },
   marks: {
-    link: ({
-      children,
-      value,
-    }: {
-      children: ReactNode;
-      value?: { blank?: boolean; href?: string };
-    }) => {
+    link: ({ children, value }) => {
       const target = value?.blank ? "_blank" : undefined;
       const rel = value?.blank ? "noopener noreferrer" : undefined;
       const href = value?.href || "#";
@@ -154,15 +140,14 @@ const portableComponents: PortableTextComponents = {
         </a>
       );
     },
-    strong: ({ children }: { children: ReactNode }) => (
-      <strong className="font-semibold">{children}</strong>
-    ),
-    em: ({ children }: { children: ReactNode }) => <em className="italic">{children}</em>,
-    code: ({ children }: { children: ReactNode }) => (
+    strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+    em: ({ children }) => <em className="italic">{children}</em>,
+    code: ({ children }) => (
       <code className="px-1 py-0.5 rounded bg-black/5">{children}</code>
     ),
   },
 };
+
 
 function ServiceCard({ service }: { service: ServiceType }) {
   const imageUrl = service.image
