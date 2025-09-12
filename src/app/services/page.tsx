@@ -2,14 +2,14 @@
 import { groq } from "next-sanity";
 import { client, urlFor } from "@/sanity/client";
 import Image from "next/image";
-import { PortableText, type PortableTextComponents } from "@portabletext/react";
+import { PortableText, PortableTextBlock, type PortableTextComponents } from "@portabletext/react";
 
 export interface ServiceType {
   _id: string;
   titre: string;
   slug: { current: string };
 
-  description: string[];
+description: PortableTextBlock[] | string | string[];
   image?: {
     _type: "image";
     asset: {
