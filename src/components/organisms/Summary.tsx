@@ -37,9 +37,9 @@ export default function Summary() {
       {/* Colonne gauche : Paragraphe */}
       <div className="">
         <p className="text-lightbg text-lg md:text-xl lg:text-2xl leading-relaxed font-bold text-left lg:pr-8">
-          Je vous aide à révéler tout le potentiel de votre maison, à l'intérieur comme à l'extérieur. 
+          Je vous aide à révéler tout le potentiel de votre maison, à l&#39;intérieur comme à l&#39;extérieur. 
           <br /><br />
-          Qu'il s'agisse d'un petit dépannage, d'un aménagement extérieur ou d'un besoin ponctuel en matériel, 
+          Qu&#39;il s&#39;agisse d&#39;un petit dépannage, d&#39;un aménagement extérieur ou d&#39;un besoin ponctuel en matériel, 
           je vous propose des services fiables, personnalisés et réalisés avec soin — sur la communauté de communes de Mimizan.
         </p>
       </div>
