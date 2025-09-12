@@ -1,17 +1,16 @@
-// app/services/page.tsx (ou l'emplacement équivalent)
+// app/services/page.tsx
 import { groq } from "next-sanity";
 import { client, urlFor } from "@/sanity/client";
 import Image from "next/image";
-// en haut du fichier
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
-import type { PortableTextBlock } from "sanity"; // (au lieu de l'importer depuis @portabletext/react)
+import type { PortableTextBlock } from "sanity";
+import type { ReactNode } from "react";
 
 export interface ServiceType {
   _id: string;
   titre: string;
   slug: { current: string };
-
-description: PortableTextBlock[] | string | string[];
+  description: PortableTextBlock[] | string | string[];
   image?: {
     _type: "image";
     asset: {
@@ -21,7 +20,7 @@ description: PortableTextBlock[] | string | string[];
     alt?: string;
   };
   bouton: string;
-  couleurBouton: "jaune" | "bleu" | string;
+  couleurBouton: "jaune" | "bleu" | "orange" | string;
 }
 
 export const revalidate = 60; // ISR: refresh every 60s
@@ -31,12 +30,10 @@ export default async function ServicesPage() {
 
   return (
     <main className="bg-[#f9f6f2] min-h-screen py-16 px-6 md:px-20 flex flex-col">
-  			<h1 className="text-3xl font-bold text-center pb-2 relative inline-block">
-					<span className="relative z-10 text-black">
-						Mes Services
-					</span>
-					<div className="mx-auto mt-2 h-0.5 bg-orange w-[80%] max-w-xs rounded-full" />
-				</h1>
+      <h1 className="text-3xl font-bold text-center pb-2 relative inline-block">
+        <span className="relative z-10 text-black">Mes Services</span>
+        <div className="mx-auto mt-2 h-0.5 bg-orange w-[80%] max-w-xs rounded-full" />
+      </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {services.map((service: ServiceType) => (
@@ -66,11 +63,51 @@ async function getServices(): Promise<ServiceType[]> {
   return await client.fetch(query);
 }
 
-// Composants PortableText (styles/annotations)
+/* =========================
+   Helpers typés (no any)
+   ========================= */
+function isPortableBlocks(input: unknown): input is PortableTextBlock[] {
+  if (!Array.isArray(input) || input.length === 0) return false;
+  const first = input[0] as unknown;
+  return typeof first === "object" && first !== null && "_type" in (first as Record<string, unknown>);
+}
+
+function makeBlock(text: string, i = 0): PortableTextBlock {
+  return {
+    _type: "block",
+    _key: `p-${i}`,
+    style: "normal",
+    markDefs: [],
+    children: [
+      {
+        _type: "span",
+        _key: `s-${i}`,
+        text,
+      },
+    ],
+  };
+}
+
+function toBlocks(desc: ServiceType["description"]): PortableTextBlock[] {
+  if (!desc) return [];
+  if (isPortableBlocks(desc)) return desc;
+  if (Array.isArray(desc)) {
+    return desc.map((t, i) => makeBlock(String(t), i));
+  }
+  return [makeBlock(String(desc), 0)];
+}
+
+/* =========================
+   PortableText components (props typées)
+   ========================= */
+type ImageValue = {
+  asset?: { url?: string; _ref?: string };
+  alt?: string;
+};
+
 const portableComponents: PortableTextComponents = {
   types: {
-    image: ({ value }) => {
-      // value.asset peut contenir url si projeté, sinon construire via urlFor
+    image: ({ value }: { value: ImageValue }) => {
       const src =
         value?.asset?.url ??
         (value?.asset?._ref ? urlFor(value).width(1200).url() : null);
@@ -84,16 +121,30 @@ const portableComponents: PortableTextComponents = {
     },
   },
   block: {
-    h1: ({ children }) => <h1 className="text-3xl font-bold mb-4">{children}</h1>,
-    h2: ({ children }) => <h2 className="text-2xl font-semibold mb-3">{children}</h2>,
-    h3: ({ children }) => <h3 className="text-xl font-semibold mb-2">{children}</h3>,
-    blockquote: ({ children }) => (
+    h1: ({ children }: { children: ReactNode }) => (
+      <h1 className="text-3xl font-bold mb-4">{children}</h1>
+    ),
+    h2: ({ children }: { children: ReactNode }) => (
+      <h2 className="text-2xl font-semibold mb-3">{children}</h2>
+    ),
+    h3: ({ children }: { children: ReactNode }) => (
+      <h3 className="text-xl font-semibold mb-2">{children}</h3>
+    ),
+    blockquote: ({ children }: { children: ReactNode }) => (
       <blockquote className="border-l-4 pl-4 italic my-4">{children}</blockquote>
     ),
-    normal: ({ children }) => <p className="mb-3 leading-relaxed">{children}</p>,
+    normal: ({ children }: { children: ReactNode }) => (
+      <p className="mb-3 leading-relaxed">{children}</p>
+    ),
   },
   marks: {
-    link: ({ children, value }) => {
+    link: ({
+      children,
+      value,
+    }: {
+      children: ReactNode;
+      value?: { blank?: boolean; href?: string };
+    }) => {
       const target = value?.blank ? "_blank" : undefined;
       const rel = value?.blank ? "noopener noreferrer" : undefined;
       const href = value?.href || "#";
@@ -103,20 +154,20 @@ const portableComponents: PortableTextComponents = {
         </a>
       );
     },
-    strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
-    em: ({ children }) => <em className="italic">{children}</em>,
-    code: ({ children }) => (
+    strong: ({ children }: { children: ReactNode }) => (
+      <strong className="font-semibold">{children}</strong>
+    ),
+    em: ({ children }: { children: ReactNode }) => <em className="italic">{children}</em>,
+    code: ({ children }: { children: ReactNode }) => (
       <code className="px-1 py-0.5 rounded bg-black/5">{children}</code>
     ),
   },
 };
 
 function ServiceCard({ service }: { service: ServiceType }) {
-  const imageUrl =
-    service.image
-      ? // si tu préfères toujours builder l’URL via urlFor :
-        urlFor(service.image).width(800).height(400).fit("max").url()
-      : null;
+  const imageUrl = service.image
+    ? urlFor(service.image).width(800).height(400).fit("max").url()
+    : null;
 
   const href = service.slug?.current ? `/${service.slug.current}` : "#";
   const boutonClasses =
@@ -141,31 +192,9 @@ function ServiceCard({ service }: { service: ServiceType }) {
 
       <h2 className="text-lg font-semibold">{service.titre}</h2>
 
-      {/* Description en PortableText */}
+      {/* Description en PortableText (toujours des blocks) */}
       <div className="text-sm text-red-500 leading-snug">
-     <PortableText
-  components={portableComponents}
-  value={
-    Array.isArray(service.description) && (service.description as any)[0]?._type
-      // Déjà des blocks => on passe tel quel
-      ? (service.description as any)
-      // Sinon, on enveloppe string ou string[] dans un block Portable Text
-      : [{
-          _type: "block",
-          _key: "p0",
-          style: "normal",
-          markDefs: [],
-          children: [{
-            _type: "span",
-            _key: "s0",
-            text: Array.isArray(service.description)
-              ? (service.description as string[]).join("\n\n")
-              : (service.description ?? "")
-          }]
-        }]
-  }
-/>
-
+        <PortableText components={portableComponents} value={toBlocks(service.description)} />
       </div>
 
       <a
